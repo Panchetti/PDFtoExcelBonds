@@ -184,7 +184,7 @@ def parse_bond_data(text):
 
 
 # Open the PDF file
-pdf_path = '/Users/kaloyanpanov/Documents/bocconi/Quant/Books/bonds.pdf'
+pdf_path = ''
 with pdfplumber.open(pdf_path) as pdf:
     text = ''
     for page in pdf.pages[2:len(pdf.pages) - 1]:
@@ -207,7 +207,7 @@ df = pd.DataFrame(bond_data, columns=columns)
 print(df.head())
 
 # Save to Excel
-output_path = '/Users/kaloyanpanov/Documents/bocconi/Quant/Books/Bonds.xlsx'
+output_path = ''
 df.to_excel(output_path, index=False, sheet_name='Sheet1')
 
 print(f"Bond data has been saved to {output_path}")
